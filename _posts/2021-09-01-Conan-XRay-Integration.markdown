@@ -6,22 +6,32 @@ meta_title: "Safer C/C++ builds using Conan's XRay integration in Artifactory"
 meta_description: "Safer C/C++ builds using Conan's XRay integration in Artifactory"
 ---
 
-Explain what XRay is and announce that since version XXX it has integration with Conan (maybe mention
-that the integration is not full but it's a first step or that will be improved in the future?).
+Xray is a DevSecOps tool that works with Artifactory to check the application dependencies and reveal possible vulnerabilities amongst them. It has support for [multiple package types and different technologies](https://www.jfrog.com/confluence/display/JFROG/JFrog+Xray) (such as Docker images, npm, PyPI...) and since [version 3.21.2](https://www.jfrog.com/confluence/display/JFROG/Xray+Release+Notes) it also supports Conan packages.
 
-Links to the db's that Xray is using to check for vulnerabilities, give some numbers maybe?
+In this post we are going to explain how to make your C/C++ builds secure using Xray with Artifactory. We will go through the setup process using the a JFrog free-tier instance that comes with cloud-hosted instances of Artifactory and Xray ready for use with Conan. If you still don't know the JFrog free-tier you can open an account (it's completely free) to follow the steps in this post. The Artifactory instance has some limitations such as a limit of 10GB of transfer a month and 2GB
+storage but that may be more than enough for personal use or just get an idea on how the experience with the JFrog platform is.
 
-Talk about the free-tier: Did you know that you can create a personal repo with almos all the
-functionalities of the JFrog platform?. Explain that we are going to use JFrog free-tier to test the
-integration.
+If you want to create your own instance please [click here to create a new account](https://jfrog.com/start-free/).
 
-## Brief explanation on how xray works and what can be done
+## Setting up Artifactory and Xray
 
 Follow this steps adding screen captures (or animated gifs?)
 
 - Add a repo to xray
 - Add watches, policies, rules
 - Create a rule that blocks downloads, send emails
+
+------
+THINGS I MAY USE:
+
+While Xray comes with its own database of software components and vulnerabilities out-of-the-box, it is also open to integration with other databases and tools. Using Xray's open API, customers can integrate Xray with their own systems and data feeds.
+
+What is a Policy?
+A Policy enables you to create a set of rules, in which each rule defines a license/security criteria, with a corresponding set of automatic actions according to your needs.
+
+What is a Watch?
+A Watch enables you to group selected resources to be scanned, and assign Policies to these Watches for security and compliance.
+------
 
 ## Back to the conan side
 
