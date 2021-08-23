@@ -6,12 +6,12 @@ meta_title: "Safer C/C++ builds using Conan's XRay integration in Artifactory"
 meta_description: "Safer C/C++ builds using Conan's XRay integration in Artifactory"
 ---
 
-Xray is a DevSecOps tool that works with Artifactory to check the application dependencies and reveal possible vulnerabilities amongst them. It has support for [multiple package types and different technologies](https://www.jfrog.com/confluence/display/JFROG/JFrog+Xray) (such as Docker images, npm, PyPI...) and since [version 3.21.2](https://www.jfrog.com/confluence/display/JFROG/Xray+Release+Notes) it also supports Conan packages.
+Xray is a DevSecOps tool that works together with Artifactory to check potential vulnerabilities between the application dependencies. It has support for [multiple package types and different technologies](https://www.jfrog.com/confluence/display/JFROG/JFrog+Xray) (such as Docker images, npm, or PyPI), and since [version 3.21.2](https://www.jfrog.com/confluence/display/JFROG/Xray+Release+Notes) it also supports Conan packages.
 
-In this post we are going to explain how to make your C/C++ builds secure using Xray with Artifactory. We will go through the setup process using the a JFrog free-tier instance that comes with cloud-hosted instances of Artifactory and Xray ready for use with Conan. If you still don't know the JFrog free-tier you can open an account (it's completely free) to follow the steps in this post. The Artifactory instance has some limitations such as a limit of 10GB of transfer a month and 2GB
-storage but that may be more than enough for personal use or just get an idea on how the experience with the JFrog platform is.
+In this post, we explain how to make your C/C++ builds secure using Xray with Artifactory. We will go through the setup process using a JFrog free-tier instance that comes with cloud-hosted instances of Artifactory and Xray ready for use with Conan. If you still don't know the JFrog free-tier you can [open an account](https://jfrog.com/start-free/) (it's completely free) to follow the steps in this post. The Artifactory instance has some limitations like a limit of 10GB of transfer a month and 2GB
+storage but will be more than enough for personal use or get an idea of how the experience with the JFrog platform is.
 
-If you want to create your own instance please [click here to create a new account](https://jfrog.com/start-free/).
+If you want to create an instance please [click here to create a new account](https://jfrog.com/start-free/).
 
 ## Setting up Artifactory and Xray
 
