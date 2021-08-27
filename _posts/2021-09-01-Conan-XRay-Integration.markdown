@@ -12,7 +12,7 @@ In this post, we explain how to make your C/C++ builds secure using Xray with Ar
 
 If you want to create a free-tier instance please [click here to create a new account](https://jfrog.com/start-free/).
 
-## Setting up Artifactory Conan repository
+## Setting up Artifactory: creating a Conan repository
 
 After loging in the free-tier instance, first thing is creating a new Conan repository in Artifactory. There's a getting started button in the free-tier that guides through the process of creating it. For this post we have created a local repository called *test-repo*. Once we create our new repo we have to configure it in the Conan local client, that's just a matter of executing *conan remote add* and *conan user* commands (you will find detailed instructions in the free-tier getting started guide as well).
 
@@ -26,9 +26,12 @@ We can create a new policy using the getting started button in the free-tier or 
     <img src="{{ site.baseurl }}/assets/post_images/2021-09-01/create_new_xray_policy.gif" align="center" alt="Creating a new XRay policy"/>
 </p>
 
-We will create a **policy** named *my-company-policy* and add several rules to it. 
+We will create a security **policy** named *mycompany-policy* and add several rules to it. 
 
-First we can create a rules called *low-severity* that will set the minimal severity rule in low (severity score under 4.0/10.0) and that will send a notify email to warn us about that.
+First we can create a rules called *low-severity-warning* that will set the minimal severity rule in low (severity score under 4.0/10.0) and that will send a notify email to warn us about that. For this, you just have to click on *New Rule* and setting the Minimal Severity and Notify Email fields. You can set the severity warning based on pre-defined ranges (low, medium, high or critical) or set a custom CVSS Score range. Please [read more about this](https://www.jfrog.com/confluence/display/JFROG/CVSS+Scoring+in+Xray) in XRay docs.
+
+Now that we have created our policy that has just one rule we will add a 
+---> ADD SCREENSHOT OF THE RULE????
 
 
 
@@ -38,7 +41,7 @@ Follow this steps adding screen captures (or animated gifs?)
 
 - Add a repo to xray
 - Add watches, policies, rules
-- Create a rule that blocks downloads, send emails
+- Create a rule that blocks downloads, send emails, more options: use webhooks to push notify to slack, create a jira ticket...
 
 ------
 THINGS I MAY USE:
